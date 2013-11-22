@@ -55,20 +55,20 @@ def win
 	@play_again = true
 	@show_hit_or_stay_buttons = false
 	session[:player_bank] = session[:player_bank].to_i + session[:player_bet].to_i
-	@success = "#{session[:player_name]} wins! You have #{session[:player_bank]} in your bank"
+	@winner = "#{session[:player_name]} wins! You have #{session[:player_bank]} in your bank"
 end
 
 def lose
 	@play_again = true
 	@show_hit_or_stay_buttons = false
 	session[:player_bank] = session[:player_bank].to_i - session[:player_bet].to_i
-	@error = "#{session[:player_name]} loses! You have #{session[:player_bank]} in your bank"
+	@loser = "#{session[:player_name]} loses! You have #{session[:player_bank]} in your bank"
 end
 
 def tie
 	@play_again = true
 	@show_hit_or_stay_buttons = false
-	@success = "It's a tie!"
+	@winner = "It's a tie!"
 end
 
 

@@ -1,6 +1,11 @@
 <div id = 'game'>
-	<h1> Welcome <%= session[:player_name] %> </h1>
+	<% if @winner %>
+    <div class="alert alert-success"><%=@winner%></div>
+  <% elsif @loser %>
+    <div class="alert alert-error"><%=@loser%></div>
+  <% end %>
 
+	<h1> Welcome <%= session[:player_name] %> </h1>
 
 	<% if @play_again %>
 	  <p>
@@ -22,7 +27,7 @@
 
 		<% if @show_dealer_hit %>
 			<h5>Dealer has <%= card_value(session[:dealer_cards])%> and will hit.</h5>
-			<form action='/game/dealer/hit' method='post'>
+			<form id="dealer_hit" action='/game/dealer/hit' method='post'>
 	       <input type='submit' class='btn btn-primary' value='Click to see dealer card &rarr;'>
 	    </form>
 		<%end %>
