@@ -45,9 +45,9 @@
 		<%=session[:player_name] %> you have <%=card_value(session[:player_cards]) %>
 		Do you want to hit or stay?
 		
-		<form id = "hit_form" action="/game/player/hit" method = 'post'>
-		   <input type = "submit" class="btn" value = "Hit" />
-		</form>
+		<form id="hit_form" action="/game/player/hit" method='post'>
+      <input type="submit" class="btn btn-success" value="Hit" />
+    </form>
 
 		<form id = "stay_form" action="/game/player/stay" method = 'post'>
 		   <input type = "submit" class="btn" value = "Stay" />

@@ -63,7 +63,6 @@ def lose
 	@show_hit_or_stay_buttons = false
 	session[:player_bank] = session[:player_bank].to_i - session[:player_bet].to_i
 	@error = "#{session[:player_name]} loses! You have #{session[:player_bank]} in your bank"
-	erb :game
 end
 
 def tie
